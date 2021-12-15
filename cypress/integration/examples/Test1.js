@@ -29,5 +29,9 @@ describe('My First Test Suite', () => {
         //check if the card has the correct number of added items
         cy.get('.cart-icon > img').click();
         cy.get('ul.cart-items:visible').find('li.cart-item').should('have.length', 2);
+
+        //click on "PROCEED TO CHECKOUT"
+        cy.get('.cart-preview >  .action-block > button').click();
+        cy.contains('Place Order').click();
     })
 })
