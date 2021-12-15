@@ -7,9 +7,17 @@ describe('My First Test Suite', () => {
         //aliases
         cy.get('.products').as('productsWrapper');
         cy.get('.brand').as('logo');
-        //parent child selector
+
+        //log logo text
+        cy.get('@logo').then((el) =>  cy.log(el.text()));
+        //check if the logo text is correct
+        cy.get('@logo').should('have.text', 'GREENKART');
+        //check products' length after searching
         cy.get('@productsWrapper').find('.product').should('have.length', 4);
+
+        //add the second product to cart
         cy.get('@productsWrapper').find('.product').eq(1).contains('ADD TO CART').click();
+        //loop through products and add cashews to cart
         cy.get('@productsWrapper').find('.product').each(($el, index, $list) => {
             const textVeg = $el.find('h4.product-name').text();
 
@@ -17,9 +25,9 @@ describe('My First Test Suite', () => {
                 cy.wrap($el).find('button').click();
             }
         });
-        cy.get('@logo').then((el) =>  cy.log(el.text()));
 
-        //check if the logo text is correct
-        cy.get('@logo').should('have.text', 'GREENKART');
+        //check if the card has the correct number of added items
+        cy.get('.cart-icon > img').click();
+        cy.get('ul.cart-items:visible').find('li.cart-item').should('have.length', 2);
     })
 })
