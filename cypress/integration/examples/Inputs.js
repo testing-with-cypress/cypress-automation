@@ -40,4 +40,12 @@ describe('Test inputs functionality', () => {
         cy.get('#name').type('Adam');
         cy.get('#confirmbtn').click();
     })
+    it('Window events', () => {
+        cy.on('window:alert', cy.stub().as('alerted'));
+        cy.get('#name').type('Adam');
+        cy.get('#alertbtn').click()
+        cy.get('@alerted')
+            .should('have.been.calledOnce')
+            .and('have.been.calledWith', 'Hello Adam, share this practice page and share your knowledge');
+    })
 })
