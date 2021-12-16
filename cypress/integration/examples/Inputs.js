@@ -8,4 +8,7 @@ describe('Test inputs functionality', () => {
     it('List of checkboxes', () => {
         cy.get('input[type="checkbox"]').check(['option1', 'option3']);
     })
+    it('Static dropdowns', () => {
+        cy.get('#dropdown-class-example').select('option1').should('have.value', 'option1');
+    })
 })
