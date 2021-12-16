@@ -16,10 +16,17 @@ describe('Test inputs functionality', () => {
         cy.get('@dynamicDropbox').type('ind');
         cy.get('#ui-id-1').find('.ui-menu-item').each((el) => {
             if(el.text() === 'India') {
-                // cy.wrap(el).click();
                 cy.wrap(el).click()
             }
         });
         cy.get('@dynamicDropbox').should('have.value', 'India');
+    })
+    it('Visible and invisible elements', () => {
+        cy.get('#displayed-text').as('visibleDiv');
+        cy.get('@visibleDiv').should('be.visible');
+        cy.get('#hide-textbox').click();
+        cy.get('@visibleDiv').should('not.be.visible');
+        cy.get('#show-textbox').click();
+        cy.get('@visibleDiv').should('be.visible');
     })
 })
