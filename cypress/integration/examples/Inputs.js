@@ -40,7 +40,7 @@ describe('Test inputs functionality', () => {
         cy.get('#name').type('Adam');
         cy.get('#confirmbtn').click();
     })
-    it('Window events', () => {
+    it('Alert using window events', () => {
         cy.on('window:alert', cy.stub().as('alerted'));
         cy.get('#name').type('Adam');
         cy.get('#alertbtn').click()
