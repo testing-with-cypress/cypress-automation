@@ -36,4 +36,8 @@ describe('Test inputs functionality', () => {
         cy.get('#name').type('Adam');
         cy.get('#alertbtn').click();
     })
+    it('Confirm popup', () => {
+        cy.get('#name').type('Adam');
+        cy.get('#confirmbtn').click();
+    })
 })
