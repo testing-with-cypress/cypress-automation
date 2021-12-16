@@ -32,4 +32,8 @@ describe('Test inputs functionality', () => {
         cy.get('#show-textbox').click();
         cy.get('@visibleDiv').should('be.visible');
     })
+    it('Alert popup', () => {
+        cy.get('#name').type('Adam');
+        cy.get('#alertbtn').click();
+    })
 })
