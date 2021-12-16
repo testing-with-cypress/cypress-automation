@@ -11,4 +11,15 @@ describe('Test inputs functionality', () => {
     it('Static dropdowns', () => {
         cy.get('#dropdown-class-example').select('option1').should('have.value', 'option1');
     })
+    it('Dynamic dropdowns', () => {
+        cy.get('#autocomplete').as('dynamicDropbox');
+        cy.get('@dynamicDropbox').type('ind');
+        cy.get('#ui-id-1').find('.ui-menu-item').each((el) => {
+            if(el.text() === 'India') {
+                // cy.wrap(el).click();
+                cy.wrap(el).click()
+            }
+        });
+        cy.get('@dynamicDropbox').should('have.value', 'India');
+    })
 })
