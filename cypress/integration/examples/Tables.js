@@ -1,6 +1,6 @@
 describe('Tables test', () => {
     it('Python course has correct price', () => {
-        cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
+        cy.visit('/AutomationPractice/');
         cy.get('#product').as('productsTable');
         cy.get('@productsTable').find('tr td:nth-of-type(2)').each((el, i) => {
             const courseTitle = el.text();

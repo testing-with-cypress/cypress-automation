@@ -1,4 +1,5 @@
 {
+  "baseUrl": "https://rahulshettyacademy.com",
   "defaultCommandTimeout": 6000,
   "pageLoadTimeout": 10000
 }
