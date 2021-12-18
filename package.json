@@ -10,6 +10,8 @@
   "author": "Adam Morsi",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^9.1.1"
+    "@types/cypress": "^1.1.3",
+    "cypress": "^9.1.1",
+    "cypress-iframe": "^1.0.1"
   }
 }
