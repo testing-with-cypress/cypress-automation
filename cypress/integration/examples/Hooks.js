@@ -10,4 +10,7 @@ describe('Hooks', () => {
         cy.get(':nth-child(1) > .form-control').type(data.name);
         cy.get('#exampleFormControlSelect1').select(data.gender);
     })
+    it('Two way binding is working', () => {
+        cy.get('h4 input[name="name"]').should('have.value', data.name);
+    })
 })
