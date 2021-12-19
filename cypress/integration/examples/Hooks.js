@@ -16,4 +16,7 @@ describe('Hooks', () => {
     it('Validate input min length attr', () => {
         cy.get(':nth-child(1) > .form-control').should('have.attr', 'minlength', '2');
     })
+    it('Disabled radio button', () => {
+        cy.get('#inlineRadio3').should('be.disabled');
+    })
 })
