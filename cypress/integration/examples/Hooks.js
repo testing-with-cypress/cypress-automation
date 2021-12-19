@@ -13,4 +13,7 @@ describe('Hooks', () => {
     it('Two way binding is working', () => {
         cy.get('h4 input[name="name"]').should('have.value', data.name);
     })
+    it('Validate input min length attr', () => {
+        cy.get(':nth-child(1) > .form-control').should('have.attr', 'minlength', '2');
+    })
 })
