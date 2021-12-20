@@ -16,7 +16,7 @@ describe('Hooks', () => {
         HomePage.getTwoWayDataBinding().should('have.value', data.name);
     })
     it('Validate input min length attr', () => {
-        cy.get(':nth-child(1) > .form-control').should('have.attr', 'minlength', '2');
+        HomePage.getNameInput().should('have.attr', 'minlength', '2');
     })
     it('Disabled radio button', () => {
         HomePage.getEntrepreneur().should('be.disabled');
