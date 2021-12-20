@@ -10,14 +10,24 @@ describe('Shop', () => {
         cy.addToCart('Blackberry');
         cy.addToCart('Nokia Edge');
     })
-    it('Checkout functionality', () => {
+    it('Check cart sum functionality', () => {
+        let total = 0;
         cy.get('#navbarResponsive > .navbar-nav > .nav-item > .nav-link').click();
+        cy.get('.table tbody tr td:nth-child(4) strong').each((el, i, list) => {
+            const price = +el.text().substring(3);
+            total += price;
+
+            if(i === list.length - 1) {
+                cy.get('h3 > strong').then((totalPriceEl) => expect(totalPriceEl.text().substring(3)).to.equal(`${total}`))
+            }
+        });
+    })
+    it('Checkout functionality', () => {
         cy.get(':nth-child(4) > :nth-child(5) > .btn').click();
         cy.get('#country').type('ind');
         cy.contains('India').click();
         cy.get('#checkbox2').check({force: true});
         cy.get('input[type="submit"]').click();
-        // cy.get('.alert').should('include', 'Success! Thank you! Your order will be delivered in next few weeks :-).');
         cy.get('.alert').then((el) =>
             expect(el.text().includes('Success! Thank you! Your order will be delivered in next few weeks :-).'))
                 .to.be.true)
