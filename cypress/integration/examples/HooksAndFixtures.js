@@ -1,4 +1,4 @@
-import HomePage from '../pageObjects/HomePage';
+import HomePage from '../pagesSelectors/HomePage';
 
 describe('Hooks', () => {
     let data = {};
