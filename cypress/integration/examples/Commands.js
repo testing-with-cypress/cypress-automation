@@ -13,13 +13,11 @@ describe('Shop', () => {
     it('Check cart sum functionality', () => {
         let total = 0;
         cy.get('#navbarResponsive > .navbar-nav > .nav-item > .nav-link').click();
-        cy.get('.table tbody tr td:nth-child(4) strong').each((el, i, list) => {
+        cy.get('.table tbody tr td:nth-child(4) strong').each((el) => {
             const price = +el.text().substring(3);
             total += price;
-
-            if(i === list.length - 1) {
-                cy.get('h3 > strong').then((totalPriceEl) => expect(totalPriceEl.text().substring(3)).to.equal(`${total}`))
-            }
+        }).then(() => {
+            cy.get('h3 > strong').then((totalPriceEl) => expect(totalPriceEl.text().substring(3)).to.equal(`${total}`))
         });
     })
     it('Checkout functionality', () => {
