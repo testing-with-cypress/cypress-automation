@@ -1,17 +1,17 @@
 class HomePage {
-    getNameInput() {
+    static getNameInput() {
         return cy.get(':nth-child(1) > .form-control');
     }
-    getTwoWayDataBinding() {
+    static getTwoWayDataBinding() {
         return cy.get('h4 input[name="name"]');
     }
-    getGender() {
+    static getGender() {
         return cy.get('#exampleFormControlSelect1');
     }
-    getEntrepreneur() {
+    static getEntrepreneur() {
         return cy.get('#inlineRadio3');
     }
-    getShopTab() {
+    static getShopTab() {
         return cy.get(':nth-child(2) > .nav-link');
     }
 }
