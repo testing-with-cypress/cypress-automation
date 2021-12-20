@@ -1,4 +1,4 @@
-import HomePage from "../pagesSelectors/HomePage";
+import HomePage from "../../support/pagesSelectors/HomePage";
 
 describe('Shop', () => {
     before(() => {
