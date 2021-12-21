@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "cypress:open": "node_modules/.bin/cypress open",
-    "cypress:run": "node_modules/.bin/cypress run"
+    "cypress:run": "node_modules/.bin/cypress run",
+    "cypress:runHeaded": "node_modules/.bin/cypress run --headed"
   },
   "keywords": [],
   "author": "Adam Morsi",
