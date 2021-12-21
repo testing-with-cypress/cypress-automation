@@ -33,9 +33,14 @@ Then('select the country submit and verify thank you message', () => {
 })
 
 /*Filling form to shop*/
-When('I fill the form details', function() {
-    HomePage.getNameInput().type(this.data.name);
-    HomePage.getGender().select(this.data.gender);
+When('I fill the form details', function(dataTable) {
+    /*=========using cypress fixtures=========*/
+    /*HomePage.getNameInput().type(this.data.name);
+    HomePage.getGender().select(this.data.gender);*/
+
+    /*=========using cucumber data table=========*/
+    HomePage.getNameInput().type(dataTable.rawTable[1][0]);
+    HomePage.getGender().select(dataTable.rawTable[1][1]);
 })
 
 Then('Validate the form behaviour', function() {
