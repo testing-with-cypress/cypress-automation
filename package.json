@@ -11,6 +11,9 @@
   "keywords": [],
   "author": "Adam Morsi",
   "license": "ISC",
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
   "devDependencies": {
     "@types/cypress": "^1.1.3",
     "cypress": "^9.1.1",
