@@ -4,7 +4,7 @@ Given('I open Ecommerce Page', () => {
     cy.visit('/angularpractice/');
 })
 
-When('I add items to Cart', () => {
+When('I add items to Cart', function () {
     HomePage.getShopTab().click();
     cy.addToCart('Blackberry');
     cy.addToCart('Nokia Edge');
