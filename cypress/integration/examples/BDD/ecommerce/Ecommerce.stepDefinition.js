@@ -1,5 +1,5 @@
 import HomePage from "../../../../support/pagesSelectors/HomePage";
-
+/*Ecommerce products delivery*/
 Given('I open Ecommerce Page', () => {
     cy.visit('/angularpractice/');
 })
@@ -30,4 +30,20 @@ Then('select the country submit and verify thank you message', () => {
     cy.get('.alert').then((el) =>
         expect(el.text().includes('Success! Thank you! Your order will be delivered in next few weeks :-).'))
             .to.be.true)
+})
+
+/*Filling form to shop*/
+When('I fill the form details', function() {
+    HomePage.getNameInput().type(this.data.name);
+    HomePage.getGender().select(this.data.gender);
+})
+
+Then('Validate the form behaviour', function() {
+    HomePage.getTwoWayDataBinding().should('have.value', this.data.name);
+    HomePage.getNameInput().should('have.attr', 'minlength', '2');
+    HomePage.getEntrepreneur().should('be.disabled');
+})
+
+And('Navigate to the shop page', () => {
+    HomePage.getShopTab().click();
 })
