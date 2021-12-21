@@ -1,0 +1,46 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=-8567
+END=3320
+title=Test inputs functionality Checkbox
+[CHAPTER]
+TIMEBASE=1/1000
+START=14220
+END=15368
+title=Test inputs functionality List of checkboxes
+[CHAPTER]
+TIMEBASE=1/1000
+START=16115
+END=16518
+title=Test inputs functionality Radio buttons
+[CHAPTER]
+TIMEBASE=1/1000
+START=16419
+END=16923
+title=Test inputs functionality Static dropdowns
+[CHAPTER]
+TIMEBASE=1/1000
+START=15979
+END=17435
+title=Test inputs functionality Dynamic dropdowns
+[CHAPTER]
+TIMEBASE=1/1000
+START=14718
+END=18892
+title=Test inputs functionality Visible and invisible elements
+[CHAPTER]
+TIMEBASE=1/1000
+START=22396
+END=23073
+title=Test inputs functionality Alert popup
+[CHAPTER]
+TIMEBASE=1/1000
+START=23231
+END=23755
+title=Test inputs functionality Confirm popup
+[CHAPTER]
+TIMEBASE=1/1000
+START=23696
+END=24286
+title=Test inputs functionality Alert using window events
